@@ -1,0 +1,9 @@
+.beer-item-container {
+    height: 30px;
+    width: 100%;
+    background-color: cyan;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
