@@ -1,8 +1,13 @@
 #header {
-    background-color: grey;
+    background-color: #0D0D0D;
+    color: #F2EDE4;
     min-height: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
     margin: 0;
 }

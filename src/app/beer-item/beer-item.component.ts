@@ -14,4 +14,9 @@ export class BeerItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  takeABeer(beerId: number) {
+    // make BE request to reduce quantity of this beer by 1
+    // update FE quantity with BE response
+  }
+
 }

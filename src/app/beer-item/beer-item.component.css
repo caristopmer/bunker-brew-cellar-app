@@ -1,11 +1,19 @@
 .beer-item-container {
-    height: 30px;
-    width: 100%;
-    background-color: cyan;
+    display: inline-block;
+    height: 19rem;
+    width: 19rem;
+    background-color: #F2EDE4;
     margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    
+    text-align: center;
+    color: #0D0D0D;
+    border: .25rem solid #8C5B1F;
+    border-radius: 1.5rem;
+}
+
+.take-one-button {
+    border: 2px solid #8C5B1F;
+    background-color: #F2B705;
+    font-size: 1rem;
+    height: 2rem;
+    width: 6rem;
 }

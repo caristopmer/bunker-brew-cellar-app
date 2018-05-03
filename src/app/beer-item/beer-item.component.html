@@ -1,5 +1,8 @@
 <div class="beer-item-container">
-  <h3>{{ beer.name }}</h3>
-  <span>{{ beer.brewery }}</span>
-  <span>{{ beer.quantity }}</span>
+  <h1>{{ beer.name }}</h1>
+  <h3>{{ beer.brewery.name }}</h3>
+  <span>{{ beer.brewery.location }}</span>
+  <p>Quantity: {{ beer.quantity }}</p>
+
+  <button class="take-one-button" (click)="takeABeer(beer.id)">Take One!</button>
 </div>

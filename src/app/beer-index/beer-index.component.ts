@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Beer } from '../beer';
 import { HttpClient } from '@angular/common/http';
+import { JSONP_ERR_WRONG_RESPONSE_TYPE } from '@angular/common/http/src/jsonp';
 
 @Component({
   selector: 'app-beer-index',
@@ -8,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./beer-index.component.css']
 })
 export class BeerIndexComponent implements OnInit {
-  beers: Array<any> = [];
+  beers: any;
 
   constructor(
     private http: HttpClient
@@ -19,44 +20,8 @@ export class BeerIndexComponent implements OnInit {
 
     this.http.get(beerIndexUrl)
       .subscribe(response => {
-        console.log(response);
-        for (let i = 0; i < response.length; i++) {
-          this.beers.push(
-            {
-              name: response[i].name,
-              quantity: response[i].quantity,
-              brewery: response[i].brewery_id
-            }
-          );
-        }
+        this.beers = response;
       });
-
-
-
-
-
-    // this.beers = [
-    //   {
-    //     name: 'this beer',
-    //     quantity: 6,
-    //     brewery: 'Dogfish Head'
-    //   },
-    //   {
-    //     name: 'that beer',
-    //     quantity: 3,
-    //     brewery: 'Yo dawg brewing co.'
-    //   },
-    //   {
-    //     name: 'another beer',
-    //     quantity: 2,
-    //     brewery: 'Miller Brewing Company'
-    //   },
-    //   {
-    //     name: 'here is a different beer',
-    //     quantity: 9,
-    //     brewery: 'Three Floyds Brewing Company'
-    //   },
-    // ];
   }
 
 }
