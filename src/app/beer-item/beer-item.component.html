@@ -5,4 +5,7 @@
   <p>Quantity: {{ beer.quantity }}</p>
 
   <button class="take-one-button" (click)="takeABeer(beer.id)">Take One!</button>
+  <br>
+  <input class="quantity-field" type="number" [(ngModel)]="restockQuantity">
+  <button class="restock-button" (click)="restockBeer(beer.id)">Restock</button>
 </div>
