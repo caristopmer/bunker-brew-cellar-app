@@ -3,6 +3,8 @@ import { Beer } from '../beer';
 import { HttpClient } from '@angular/common/http';
 import { JSONP_ERR_WRONG_RESPONSE_TYPE } from '@angular/common/http/src/jsonp';
 
+import { BACKENDAPIURL } from '../constants';
+
 @Component({
   selector: 'app-beer-index',
   templateUrl: './beer-index.component.html',
@@ -16,7 +18,7 @@ export class BeerIndexComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const beerIndexUrl = 'http://localhost:3000/beers';
+    const beerIndexUrl = BACKENDAPIURL + 'beers';
 
     this.http.get(beerIndexUrl)
       .subscribe(response => {
