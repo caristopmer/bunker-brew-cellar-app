@@ -3,6 +3,8 @@ import { Beer } from '../beer';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { BACKENDAPIURL } from '../constants';
+
 @Component({
   selector: 'app-beer-item',
   templateUrl: './beer-item.component.html',
@@ -24,7 +26,7 @@ export class BeerItemComponent implements OnInit {
   }
 
   takeABeer(beerId: number) {
-    const takeOneUrl = 'http://localhost:3000/beers/' + beerId + '/takeone';
+    const takeOneUrl = BACKENDAPIURL + 'beers/' + beerId + '/takeone';
 
     this.http.get(takeOneUrl)
       .subscribe(response => {
@@ -33,7 +35,7 @@ export class BeerItemComponent implements OnInit {
   }
 
   restockBeer(beerId: number) {
-    const restockUrl = 'http://localhost:3000/beers/' + beerId + '/restock';
+    const restockUrl = BACKENDAPIURL + 'beers' + beerId + '/restock';
     const payload = this.restockForm.getRawValue();
 
     this.http.put(restockUrl, payload)
