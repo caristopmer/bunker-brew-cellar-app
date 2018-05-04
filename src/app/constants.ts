@@ -1,1 +1,1 @@
-export const BACKENDAPIURL = 'http://localhost:3000/';
+export const BACKENDAPIURL = 'https://bunker-brew-cellar-api.herokuapp.com/';
