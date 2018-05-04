@@ -1,0 +1,16 @@
+<div class="beer-item-container">
+  <h1>{{ beer.name }}</h1>
+  <h3>{{ beer.brewery.name }}</h3>
+  <span>{{ beer.brewery.location }}</span>
+  <p>Quantity: {{ beer.quantity }}</p>
+
+  <button class="take-one-button" (click)="takeABeer(beer.id)">Take One!</button>
+
+  <form [formGroup]="restockForm" (ngSubmit)="restockBeer(beer.id)">
+    <input class="quantity-field" type="number" formControlName="restockQuantity">
+    <button type="submit" class="restock-button">Restock</button>
+  </form>
+
+  <!-- <input class="quantity-field" type="number" [(ngModel)]="restockQuantity">
+  <button class="restock-button" (click)="restockBeer(beer.id)">Restock</button> -->
+</div>
