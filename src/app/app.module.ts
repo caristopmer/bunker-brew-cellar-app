@@ -10,6 +10,8 @@ import { BeerIndexComponent } from './beer-index/beer-index.component';
 import { BeerItemComponent } from './beer-item/beer-item.component';
 import { MainBodyComponent } from './main-body/main-body.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MainBodyComponent } from './main-body/main-body.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

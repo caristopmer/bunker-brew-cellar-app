@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Beer } from '../beer';
 import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-beer-item',
@@ -9,15 +10,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BeerItemComponent implements OnInit {
   @Input() beer: Beer;
-  restockQuantity = 6;
+  restockForm: FormGroup;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
     this.restockForm = this.formBuilder.group({
-      businessname: [questionData.businessname || '', [Validators.required]]
+      restockQuantity: [ 6, [Validators.required]]
       });
   }
 
@@ -32,10 +34,10 @@ export class BeerItemComponent implements OnInit {
 
   restockBeer(beerId: number) {
     const restockUrl = 'http://localhost:3000/beers/' + beerId + '/restock';
+    const payload = this.restockForm.getRawValue();
 
-    this.http.put(restockUrl, {restockQuantity: parseInt(restockQuantity, 10)})
+    this.http.put(restockUrl, payload)
       .subscribe(response => {
-        console.log(response);
         this.beer.quantity = response;
       });
   }
