@@ -35,7 +35,7 @@ export class BeerItemComponent implements OnInit {
   }
 
   restockBeer(beerId: number) {
-    const restockUrl = BACKENDAPIURL + 'beers' + beerId + '/restock';
+    const restockUrl = BACKENDAPIURL + 'beers/' + beerId + '/restock';
     const payload = this.restockForm.getRawValue();
 
     this.http.put(restockUrl, payload)
