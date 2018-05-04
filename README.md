@@ -1,27 +1,22 @@
-# BunkerBrewCellar
+# Bunker Brew Cellar
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
+[Link to project](https://bunker-brew-cellar-app.herokuapp.com/)
 
-## Development server
+[Link to project's back end repository](https://github.com/caristopmer/bunker-brew-cellar-api)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+This web app is for tracking the beer contents of the fridge in the Bunker office. It features an Angular 5 front end and a back end API written in Rails 5.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## MVP, as of Cinco do Quattro, 2018:
+- Sample beers have been seeded into app.
+- User can view the name, brewery, brewery location, and current quantity of beer in the fridge.
+- User may 'take' a beer from the fridge, reducing it's quantity.
+- User may 'restock' the fridge with a specified number of beers, increasing quantity.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Features to add:
+- Massive UI cleanup and improvement
+- User can add new beers to the fridge, which will then appear in the list.
+- Beers will be grayed out if their quantity falls to 0.
+- Add `selections` table to schema as alternative way to track quantity and be able to track beer popularity.
+- Beers can be tapped/clicked on to view more information about that beer (ABV, description, photo, etc.)
+- Add ability to generate 're-ordering' email with current list of inventory, favorites, etc.
