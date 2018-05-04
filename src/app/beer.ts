@@ -1,7 +1,7 @@
 export class Beer {
     id: number;
     name: string;
-    brewery: string;
+    brewery: any;
     abv: number;
     quantity: any;
     description: string;
