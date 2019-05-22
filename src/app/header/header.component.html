@@ -1,7 +1,14 @@
 <div id="header">
-  <h1>{{ title }}</h1>
+  <div class="menu-container">
+    <button mat-button [matMenuTriggerFor]="menu">
+      <i class="material-icons">menu</i>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/beers/new">Add New Beer</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+  </div>
 
-
-
+  <h1 routerLink="/Home">{{ title }}</h1>
 
 </div>

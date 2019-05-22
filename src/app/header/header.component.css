@@ -1,7 +1,7 @@
 #header {
     background-color: #0D0D0D;
     color: #F2EDE4;
-    min-height: 50px;
+    height: 5.5rem;
     display: flex;
     justify-content: center;
 }
@@ -10,4 +10,14 @@ h1 {
     font-family: 'Pacifico', cursive;
     font-size: 3rem;
     margin: 0;
+}
+
+.menu-container {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+}
+
+.menu-container i {
+    color: white;
 }

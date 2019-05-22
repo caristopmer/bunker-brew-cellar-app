@@ -2,11 +2,12 @@
 <div id="app-container">
     <app-header [title]="title"></app-header>
 
-    <div style="text-align:center">
-    
+    <div class="main-body" #outlet>
+        <router-outlet></router-outlet>
+        <!-- <div *ngIf="hasPendingCalls">
+            Loading spinner?
+        </div> -->
     </div>
-    
-    <app-main-body></app-main-body>
-    
+
     <app-footer></app-footer>
 </div>
