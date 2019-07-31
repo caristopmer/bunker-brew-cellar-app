@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainBodyComponent } from './main-body.component';
+import { AddStyleComponent } from './add-style.component';
 
-describe('MainBodyComponent', () => {
-  let component: MainBodyComponent;
-  let fixture: ComponentFixture<MainBodyComponent>;
+describe('AddStyleComponent', () => {
+  let component: AddStyleComponent;
+  let fixture: ComponentFixture<AddStyleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainBodyComponent ]
+      declarations: [ AddStyleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainBodyComponent);
+    fixture = TestBed.createComponent(AddStyleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

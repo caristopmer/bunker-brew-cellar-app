@@ -1,0 +1,38 @@
+<div class="add-beer-container">
+    <h3>Add A New Beer!</h3>
+
+    <form class="add-beer-form" [formGroup]="addBeerForm" (ngSubmit)="addBeerFormSubmitted()">
+        <div class="form-item">
+            <label>Name:</label>
+            <input class="name-field form-field" type="text" formControlName="name">
+        </div>
+        <div class="form-item">
+            <label>Brewery:</label>
+            <select class="brewery-field form-field" formControlName="brewery_id">
+                <option *ngFor="let brewery of breweriesList" value="{{brewery.id}}">{{brewery.name}}</option>
+            </select>
+        </div>
+        <div class="form-item">
+            <label>ABV%:</label>
+            <input class="abv-field form-field" type="number" formControlName="abv">
+        </div>
+        <div class="form-item">
+            <label>Quantity:</label>
+            <input class="quantity-field form-field" type="number" formControlName="quantity">
+        </div>
+        <div class="form-item">
+            <label>Description:</label>
+            <input class="description-field form-field" type="text" formControlName="description">
+        </div>
+        <div class="form-item">
+            <label>Style:</label>
+            <select class="style-field form-field" formControlName="style_id">
+                <option *ngFor="let style of stylesList" value="{{style.id}}">{{style.name}}</option>
+            </select>
+        </div>
+
+
+
+        <button type="submit" class="add-beer-button" [disabled]="!addBeerForm.valid">Add Beer!</button>
+    </form>
+</div>  

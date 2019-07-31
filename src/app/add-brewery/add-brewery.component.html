@@ -1,0 +1,16 @@
+<div class="add-brewery-container">
+    <h3>Add A New Brewery!</h3>
+
+    <form class="add-brewery-form" [formGroup]="addBreweryForm" (ngSubmit)="addBreweryFormSubmitted()">
+        <div class="form-item">
+            <label>Brewery Name:</label>
+            <input class="name-field form-field" type="text" formControlName="name">
+        </div>
+        <div class="form-item">
+            <label>Location:</label>
+            <input class="location-field form-field" type="text" formControlName="location">
+        </div>
+
+        <button type="submit" class="add-brewery-button" [disabled]="!addBreweryForm.valid">Add Brewery!</button>
+    </form>
+</div>  
