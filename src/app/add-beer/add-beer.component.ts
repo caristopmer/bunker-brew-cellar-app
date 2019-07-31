@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Beer } from '../beer';
+import { Beer, Brewery, Style } from '../models';
 import { HttpClient } from '@angular/common/http';
-import { JSONP_ERR_WRONG_RESPONSE_TYPE } from '@angular/common/http/src/jsonp';
 
-import { BACKENDAPIURL } from '../constants';
+import { BACKENDAPIURL, routeConstants } from '../constants';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-beer',
@@ -11,19 +12,47 @@ import { BACKENDAPIURL } from '../constants';
   styleUrls: ['./add-beer.component.css']
 })
 export class AddBeerComponent implements OnInit {
-  beers: any;
+  addBeerForm: FormGroup;
+  breweriesList: Array<Brewery>;
+  stylesList: Array<Style>;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private formBuilder: FormBuilder,
+    private router: Router
   ) { }
 
-  ngOnInit() {
-    // const beerIndexUrl = BACKENDAPIURL + 'beers';
+  async ngOnInit() {
+    this.addBeerForm = this.formBuilder.group({
+      name: [ '' , [Validators.required]],
+      brewery_id: [ '', [Validators.required]],
+      abv: [ '', [Validators.required]],
+      quantity: [ 6, [Validators.required]],
+      description: [ '', [Validators.required]],
+      style_id: [ '', [Validators.required]]
+    });
 
-    // this.http.get(beerIndexUrl)
-    //   .subscribe(response => {
-    //     this.beers = response;
-    //   });
+    await this.initializeAsyncData();
   }
 
+  async initializeAsyncData() {
+    const breweriesUrl = BACKENDAPIURL + 'breweries';
+    this.http.get<Array<Brewery>>(breweriesUrl).subscribe(response => {
+      this.breweriesList = response;
+    });
+    const stylesUrl = BACKENDAPIURL + 'styles';
+    this.http.get<Array<Style>>(stylesUrl).subscribe(response => {
+      this.stylesList = response;
+    });
+  }
+
+  addBeerFormSubmitted() {
+    const addBeerUrl = BACKENDAPIURL + 'beers';
+    const payload = this.addBeerForm.getRawValue();
+
+    this.http.post<Beer>(addBeerUrl, payload)
+      .subscribe(response => {
+        this.router.navigate([routeConstants.homeRoute]);
+      });
+  }
 }

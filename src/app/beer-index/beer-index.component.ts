@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Beer } from '../beer';
+import { Beer } from '../models';
 import { HttpClient } from '@angular/common/http';
 import { JSONP_ERR_WRONG_RESPONSE_TYPE } from '@angular/common/http/src/jsonp';
 
@@ -11,7 +11,7 @@ import { BACKENDAPIURL } from '../constants';
   styleUrls: ['./beer-index.component.css']
 })
 export class BeerIndexComponent implements OnInit {
-  beers: any;
+  beers: Array<Beer>;
 
   constructor(
     private http: HttpClient
@@ -20,7 +20,7 @@ export class BeerIndexComponent implements OnInit {
   ngOnInit() {
     const beerIndexUrl = BACKENDAPIURL + 'beers';
 
-    this.http.get(beerIndexUrl)
+    this.http.get<Array<Beer>>(beerIndexUrl)
       .subscribe(response => {
         this.beers = response;
       });

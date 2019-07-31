@@ -7,3 +7,14 @@ export class Beer {
     description: string;
     style: string;
 }
+
+export class Brewery {
+    id: number;
+    name: string;
+    location: string;
+}
+
+export class Style {
+    id: number;
+    name: string;
+}

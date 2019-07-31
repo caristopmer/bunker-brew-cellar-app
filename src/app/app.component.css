@@ -8,10 +8,9 @@ body {
 }
 
 #app-container {
-    height: 100vh;
     min-height: 500px;
     background-color: #F2A922;
-    padding-top: 5.5rem;
+    padding-top: 6rem;
 }
 
 app-header {
@@ -30,8 +29,8 @@ app-header {
     -webkit-overflow-scrolling: touch;
 }
 
-app-footer {
+/* app-footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-}
+} */

@@ -1,0 +1,12 @@
+<div class="add-style-container">
+    <h3>Add A New Style!</h3>
+
+    <form class="add-style-form" [formGroup]="addStyleForm" (ngSubmit)="addStyleFormSubmitted()">
+        <div class="form-item">
+            <label>Style Name:</label>
+            <input class="name-field form-field" type="text" formControlName="name">
+        </div>
+
+        <button type="submit" class="add-style-button" [disabled]="!addStyleForm.valid">Add Style!</button>
+    </form>
+</div>  

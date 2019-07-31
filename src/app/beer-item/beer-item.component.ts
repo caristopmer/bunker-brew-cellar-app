@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Beer } from '../beer';
+import { Beer } from '../models';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -22,7 +22,7 @@ export class BeerItemComponent implements OnInit {
   ngOnInit() {
     this.restockForm = this.formBuilder.group({
       restockQuantity: [ 6, [Validators.required]]
-      });
+    });
   }
 
   takeABeer(beerId: number) {

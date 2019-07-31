@@ -2,7 +2,7 @@ h3 {
   text-align: center;
 }
 
-.add-beer-form {
+.add-style-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +24,7 @@ h3 {
   background-color: #ffffff;
 }
 
-.add-beer-button {
+.add-style-button {
   border: 2px solid #0D0D0D;
   background-color: #BF4904;
   font-size: 1rem;
